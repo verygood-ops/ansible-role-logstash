@@ -47,4 +47,11 @@
   tags:
     - logstash_config
 
+- name: use wazuh default config file
+  template:
+    src=01-ossec-singlehost.conf
+    dest={{logstash_conf_dir}}/01-ossec-singlehost.conf
+  when: "{{logstash_config_wazuh_default}}"
+  notify: logstash restart
+
 # vi:ts=2:sw=2:et:ft=yaml

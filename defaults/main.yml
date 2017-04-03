@@ -68,4 +68,7 @@ logstash_plugins:
   - logstash-input-s3
   - logstash-output-s3
 
+logstash_config_wazuh_default: false
+logstash_elasticsearch_output: 127.0.0.1
+
 # vi:ts=2:sw=2:et:ft=yaml

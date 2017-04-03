@@ -1,8 +1,8 @@
 # Ansible role for Logstash
 
-[![Build Status](https://travis-ci.org/torian/ansible-role-logstash.svg)](https://travis-ci.org/torian/ansible-role-logstash)
+[![CircleCI](https://circleci.com/gh/verygood-ops/ansible-role-logstash.svg?style=svg&circle-token=b456583ea0055e447f5d5f4169ad91e6c772d97b)](https://circleci.com/gh/verygood-ops/ansible-role-logstash)
 
-This ansible role installs [Logstash](https://www.elastic.co/products/logstash) 
+This ansible role installs [Logstash-5](https://www.elastic.co/products/logstash) 
 through the official repository packages.
 
 ## Supported Platforms
