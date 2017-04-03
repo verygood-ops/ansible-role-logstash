@@ -10,5 +10,5 @@ dependencies:
     - pip install setuptools --upgrade
 test:
   override:
-    - ansible-playbook -i localhost, -c local tests/test_defaults.yml --syntax-check
-    - ansible-playbook -i localhost, -c local tests/test_defaults.yml
+    - ansible-playbook -i localhost, -c local tests/test_defaults.yml --syntax-check -e logstash_cloudtrail_template=true
+    - ansible-playbook -i localhost, -c local tests/test_defaults.yml --skip-tags=cloudtrail-template

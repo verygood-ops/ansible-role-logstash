@@ -68,7 +68,11 @@ logstash_plugins:
   - logstash-input-s3
   - logstash-output-s3
 
+# Logstash Wazuh config for ossec-server
 logstash_config_wazuh_default: false
 logstash_elasticsearch_output: 127.0.0.1
+
+# install logstash cloudtrail template into ES
+logstash_cloudtrail_template: false
 
 # vi:ts=2:sw=2:et:ft=yaml

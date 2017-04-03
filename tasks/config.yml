@@ -49,9 +49,20 @@
 
 - name: use wazuh default config file
   template:
-    src=01-ossec-singlehost.conf
+    src=etc/logstash/conf.d/01-ossec-singlehost.conf
     dest={{logstash_conf_dir}}/01-ossec-singlehost.conf
   when: "{{logstash_config_wazuh_default}}"
   notify: logstash restart
+
+- name: copy custom dynamic template to tmp folder
+  template:
+    src=logstash.dynamic.template
+    dest=/tmp/logstash.dynamic.template
+  when: "{{logstash_cloudtrail_template}}"
+  tags: cloudtrail-template
+
+- name: import custom dynamic template as default
+  shell: curl -XPUT 'http://localhost:9200/_template/logstash' -d@/tmp/logstash.dynamic.template
+  tags: cloudtrail-template
 
 # vi:ts=2:sw=2:et:ft=yaml
