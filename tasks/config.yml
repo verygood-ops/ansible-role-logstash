@@ -63,6 +63,7 @@
 
 - name: import custom dynamic template as default
   shell: curl -XPUT 'http://localhost:9200/_template/logstash' -d@/tmp/logstash.dynamic.template
+  when: "{{logstash_cloudtrail_template}}"
   tags: cloudtrail-template
 
 # vi:ts=2:sw=2:et:ft=yaml
